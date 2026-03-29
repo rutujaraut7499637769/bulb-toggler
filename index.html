@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bulb Toggler</title>
+
+<style>
+    body{
+        background-color: rgb(226, 237, 246);
+        text-align:center;
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+    }
+
+    .heading{
+        color: darkslategray;
+        margin-top: 20px;
+    }
+
+    .bulb-container{
+        width: 300px;
+        margin: 40px auto;
+        border-radius: 15px;
+        background-color: #ffffff;
+        padding: 20px;
+        border: 2px solid rgb(66, 64, 64); 
+        box-shadow: 0 6px 18px rgba(0,0,0,0.2); 
+    }
+
+    .img-bulb{
+        height: 200px;
+        margin: 15px;    
+    }
+
+    .btn{
+        border:none;
+        min-width: 110px;
+        border-radius: 25px;
+        padding: 8px 20px;
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn-on{
+        background-color: palevioletred;
+    }
+
+    .btn-off{
+        background-color: rgb(223, 189, 223);
+    }
+
+    .btn:hover{
+        transform: scale(1.07);
+        box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+</style>
+</head>
+
+<body>
+
+<h1 class="heading">Bulb Toggler</h1>
+
+<div class="bulb-container">
+    <img src="off.png" class="img-bulb" id="bulb"/> 
+
+    <br>
+    <button class="btn btn-on" onclick="swithBulb()" id="btn-toggle">
+        Toggle
+    </button>
+</div>
+
+<script>
+const bulbElement = document.getElementById("bulb");
+const btnToggle = document.getElementById("btn-toggle");
+
+function swithBulb(){
+    if (bulbElement.src.includes("on.png")){
+        bulbElement.src = "off.png";
+        btnToggle.className = "btn btn-on";
+    } else {
+        bulbElement.src = "on.png";
+        btnToggle.className = "btn btn-off";
+    }
+}
+</script>
+
+</body>
+</html>
